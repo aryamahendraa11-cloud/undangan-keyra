@@ -74,12 +74,3 @@ function scrollToTop(){
 
 // Mengambil nama tamu dari URL
 
-const params = new URLSearchParams(window.location.search);
-
-const namaTamu = params.get("to");
-
-if (namaTamu) {
-
-    document.getElementById("guest").innerHTML = decodeURIComponent(namaTamu);
-
-}
