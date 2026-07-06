@@ -1,0 +1,716 @@
+<body> 
+    <div id="flowers"></div>
+<link rel="stylesheet" href="style.css">
+
+<section id="cover">
+
+    <!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Undangan Digital</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#f8f4ef;
+
+overflow:hidden;
+
+}
+
+/* ==================== COVER ===================== */
+
+#cover{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100vh;
+
+background-image:url ("img/foto-cover.jpg.jpeg")center;
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+}
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.45);
+
+backdrop-filter:blur(2px);
+
+}
+
+.cover-content{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+padding:30px;
+
+max-width:420px;
+
+animation:fade 1.5s;
+
+}
+
+.save{
+
+letter-spacing:5px;
+
+font-size:14px;
+
+}
+
+.title{
+
+font-size:54px;
+
+font-family:'Cormorant Garamond',serif;
+
+margin-top:15px;
+
+}
+
+.subtitle{
+
+margin-top:10px;
+
+font-size:17px;
+
+}
+
+.kepada{
+
+margin-top:70px;
+
+font-size:13px;
+
+opacity:.8;
+
+}
+
+#guest{
+
+font-size:24px;
+
+font-weight:bold;
+
+margin-top:10px;
+
+font-family:'Cormorant Garamond',serif;
+
+}
+
+.open{
+
+margin-top:40px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:40px;
+
+background:#b8926a;
+
+color:white;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.open:hover{
+
+transform:translateY(-3px);
+
+background:#a57e56;
+
+}
+
+/* ==================== HALAMAN ===================== */
+
+#main{
+
+display:none;
+
+padding:60px 25px;
+
+text-align:center;
+
+min-height:100vh;
+
+background:#f8f4ef;
+
+}
+
+h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:42px;
+
+color:#b8926a;
+
+}
+
+p{
+
+margin-top:20px;
+
+line-height:28px;
+
+color:#555;
+
+}
+
+.fadeOut{
+
+animation:hilang .8s forwards;
+
+}
+
+@keyframes hilang{
+
+to{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= COVER ================= -->
+
+<section id="cover">
+
+<div class="overlay"></div>
+
+<div class="cover-content">
+
+<div class="save">
+
+TIGANG SASIH LAN MAPETIK 
+
+</div>
+
+<div class="title">
+
+KEYRA 
+
+</div>
+
+<div class="subtitle">
+
+Rabu, 5 Agustus 2026
+
+</div>
+
+<div class="kepada">
+
+Kepada Yth.
+
+</div>
+
+<div id="guest">
+
+Bapak / Ibu / Saudara/i
+
+</div>
+
+<button class="open" onclick="openInvitation()">
+
+Buka Undangan
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= HALAMAN UTAMA ================= -->
+
+<section id="main">
+
+<h2>Selamat Datang</h2>
+
+<p>
+
+Terima kasih telah meluangkan waktu untuk membuka undangan kami.
+
+</p>
+
+</section>
+
+<audio id="music" loop>
+
+<source src="musik.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+//=================== NAMA TAMU ===================
+
+const params=new URLSearchParams(window.location.search);
+
+const guest=params.get("untuk");
+
+if(guest){
+
+document.getElementById("guest").innerHTML=decodeURIComponent(guest.replace(/\+/g," "));
+
+}
+
+//=================== BUKA UNDANGAN ===================
+
+function openInvitation(){
+
+document.getElementById("cover").classList.add("fadeOut");
+
+setTimeout(()=>{
+
+document.getElementById("cover").style.display="none";
+
+document.body.style.overflow="auto";
+
+document.getElementById("main").style.display="block";
+
+},700);
+
+document.getElementById("music").play();
+
+}
+
+</script>
+
+</body>
+
+</html>
+
+</section>
+
+<section id="opening">
+<section class="opening">
+
+    <p class="opening-small">
+
+        TIGANG SASIH LAN MAPETIK 
+
+    </p>
+
+    <h1 class="opening-title">
+
+        Ni Putu Ayu Keyra Anuradha Mahendra 
+
+    </h1>
+
+    <div class="divider"></div>
+
+    <p class="opening-date">
+
+        Rabu, 05 Agustus 2026
+
+    </p>
+
+    <p class="opening-address">
+
+        Jalan Gatot Subroto I/V No.3 <br>
+
+        Link/Br. Tegeh Sari, Tonja <br>
+
+        Denpasar - Bali
+
+    </p>
+
+    <blockquote class="quote">
+
+        "Sesungguhnya tidak dapat dihindari suka dan duka itu, sebab keduanya adalah anugerah bagi pendewasaan diri. Namun mereka yang bijak tidak akan dapat dikacaukan oleh keduanya dan justru mendapatkan manfaat darinya."
+
+        <br><br>
+
+        <strong>Sarasamuscaya Sloka 498</strong>
+
+    </blockquote>
+
+</section>
+
+</section>
+
+<section id="countdown">
+
+    <section id="countdown" class="countdown-section">
+
+    <p class="section-title">
+
+        Menuju Hari Bahagia
+
+    </p>
+
+    <h2 class="count-title">
+
+        Save The Date
+
+    </h2>
+
+    <div class="count-wrapper">
+
+        <div class="count-box">
+
+            <span id="days">00</span>
+
+            <small>Hari</small>
+
+        </div>
+
+        <div class="count-box">
+
+            <span id="hours">00</span>
+
+            <small>Jam</small>
+
+        </div>
+
+        <div class="count-box">
+
+            <span id="minutes">00</span>
+
+            <small>Menit</small>
+
+        </div>
+
+        <div class="count-box">
+
+            <span id="seconds">00</span>
+
+            <small>Detik</small>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+
+<section id="couple">
+
+<!-- ================= MEMPELAI ================= -->
+
+<section id="couple" class="couple-section">
+
+    <p class="section-title">Om Swastiastu</p>
+
+    <p class="couple-desc">
+
+        Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya Tigang Sasih (3 Bulanan) Lan Mapetik Putri kami.
+
+    </p>
+
+    <!-- Pengantin Wanita -->
+
+    <div class="couple-card">
+
+        <img src="img/bride.jpeg" class="couple-photo">
+
+        <h3>Ni Putu Ayu Keyra Anuradha Mahendra</h3>
+
+        <p class="parent">
+
+            Putri Pertama dari
+
+        </p>
+
+        <p class="family">
+
+            Bapak I Ketut Gede Arya Mahendra, S.Kom <br>
+
+            &<br>
+
+            Ibu Ni Putu Dima Reta Maharani 
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+<section id="event">
+<!-- ================= DETAIL ACARA ================= -->
+
+<section id="event" class="event-section">
+
+    <p class="section-title">Save The Date</p>
+
+    <h2 class="event-title">
+
+        Detail Acara
+
+    </h2>
+
+    <div class="event-card">
+
+        <div class="event-icon">🛕</div>
+
+        <h3>3 Bulanan Lan Mapetik</h3>
+
+        <p class="event-date">
+
+            Rabu, 05 Agustus 2026
+
+        </p>
+
+        <p>
+
+            Pukul 10.00 WITA - Selesai
+
+        </p>
+
+        <p class="event-address">
+
+            Jalan Gatot Subroto I/V No.3<br>
+
+            Link/Br. Tegeh Sari, Tonja<br>
+
+            Denpasar Utara, Bali
+
+        </p>
+
+        <a href="https://maps.app.goo.gl/PGPL5fx5CCXLGT5Z8" target="_blank" class="event-button">
+
+            📍 Lihat Lokasi
+
+        </a>
+
+    </div>
+
+</section>
+
+</section>
+
+<section id="gallery">
+
+...
+
+</section>
+
+<section id="maps">
+<!-- ================= GOOGLE MAPS ================= -->
+
+<section id="maps" class="maps-section">
+
+    <p class="section-title">Lokasi Acara</p>
+
+    <h2 class="maps-title">
+
+        Temukan Kami
+
+    </h2>
+
+    <p class="maps-desc">
+
+        Merupakan suatu kebahagiaan bagi kami apabila
+
+        Bapak/Ibu/Saudara/i berkenan hadir pada acara kami.
+
+    </p>
+
+    <div class="maps-card">
+
+        <iframe
+
+            src="https://www.google.com/maps/embed?pb=https://maps.app.goo.gl/PGPL5fx5CCXLGT5Z8"
+
+            loading="lazy"
+
+            allowfullscreen>
+
+        </iframe>
+
+    </div>
+
+    <a href="https://maps.app.goo.gl/PGPL5fx5CCXLGT5Z8" target="_blank" class="maps-button">
+
+        📍 Buka Google Maps
+
+    </a>
+
+</section>
+...
+
+</section>
+
+<section id="gift">
+
+...
+
+</section>
+
+<section id="rsvp">
+
+...
+
+</section>
+
+<section id="footer">
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h2>Terima Kasih</h2>
+
+        <p>
+
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+
+            Bapak/Ibu/Saudara/i berkenan hadir serta memberikan doa kepada putri kami.
+
+        </p>
+
+        <div class="footer-love">
+
+            ❤
+
+        </div>
+
+        <h3>
+
+            Ni Putu Ayu Keyra Anuradha Mahendra
+
+        </h3>
+
+        <small>
+
+            Rabu, 05 Agustus 2026
+
+        </small>
+
+        <div class="footer-line"></div>
+
+        <p class="copyright">
+
+            © 2026 All Rights Reserved
+
+        </p>
+
+        <p class="credit">
+
+            HandMade with ❤️ by Tutde
+
+        </p>
+
+    </div>
+
+</footer>
+
+</section>
+
+<section>
+<!-- ================= BACK TO TOP ================= -->
+
+<button id="backToTop" onclick="scrollToTop()">
+
+    ↑
+
+</button>
+
+</section>
+
+
+</section>
+
+<script src="app.js"></script>
+</body>
